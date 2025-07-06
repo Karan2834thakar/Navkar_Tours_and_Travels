@@ -24,7 +24,7 @@ function Home() {
         <img
           src={heroImage}
           alt="Hero"
-          className="absolute w-full h-full object-fit opacity-25 bg-black"
+          className="absolute w-full h-full object-fill sm:object-center opacity-25"
         />
         <motion.div
           initial={{ opacity: 0, y: 30 }}
