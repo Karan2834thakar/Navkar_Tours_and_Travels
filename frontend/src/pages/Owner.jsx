@@ -48,7 +48,7 @@ function Owner() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.6 }}
-        className="max-w-12 mx-auto flex    md:flex-row items-center gap-2"
+        className="max-w-12 mx-auto flex  justify-center  md:flex-row items-center gap-2"
       >
         
           <a className=" bg-black text-6xl justify-center  " href="https://www.instagram.com/rajkot_jeev?igsh=MWNram53MW5yODBqaw==">
