@@ -43,22 +43,22 @@ function Owner() {
         </div>
        
       </motion.div>
-      <p className="text-center justify-between text-lg mt-5 ml-7 text-blue-500">Explor more about him on social media </p>
+      {/* <p className="text-center justify-between text-lg mt-5 ml-7 text-blue-500">Explor more about him on social media </p> */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.6 }}
-        className="max-w-12 mx-auto    md:flex-row items-center gap-10"
+        className="max-w-12 mx-auto flex    md:flex-row items-center gap-2"
       >
         
-          <a className=" bg-black text-6xl  " href="https://www.instagram.com/rajkot_jeev?igsh=MWNram53MW5yODBqaw==">
+          <a className=" bg-black text-6xl justify-center  " href="https://www.instagram.com/rajkot_jeev?igsh=MWNram53MW5yODBqaw==">
           <span>
 
           <FaInstagramSquare />
           </span>
          
           </a>
-           <h3 className="text-lg text-pink-700">Instagram</h3>
+           <h3 className="  text-lg text-pink-700">Instagram</h3>
       </motion.div>
  
 
