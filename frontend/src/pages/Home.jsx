@@ -171,6 +171,19 @@ function Home() {
           </Link>
         </section>
       </RevealSection>
+{/* 🔹 Address Section */}
+<section className="px-6 py-14 bg-white dark:bg-[#111] text-center">
+  <h2 className="text-3xl font-bold text-blue-600 mb-4">Visit Us</h2>
+  <p className="text-lg text-gray-700 dark:text-gray-300 mb-4">
+    All types of Cars Available on Rental Basis
+  </p>
+  <p className="text-base text-gray-600 dark:text-gray-400 max-w-xl mx-auto">
+    <strong>Address:</strong><br />
+    Plot No. 148, Rudanagar-1, Vrundavan Society, <br />
+    St. No-7, Nr. Shakti Provision Store, <br />
+    Kalawad Road, Rajkot – 360005, Gujarat
+  </p>
+</section>
 
       {/* 🔹 Policies */}
       <RevealSection direction="left">
