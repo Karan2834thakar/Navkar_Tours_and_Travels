@@ -41,7 +41,24 @@ function About() {
           </span>
         </a>
       </motion.div>
-        <h3 className="  mx-auto flex   md:flex-row items-center mt-4 gap-2 text-pink-700 justify-center text-2xl ">Official Instagram account of Navkar</h3>
+        <h3 className="mb-2  mx-auto flex   md:flex-row items-center mt-4 gap-2 text-pink-700 justify-center text-2xl ">Official Instagram account of Navkar</h3>
+      {/* feedback  */}
+      {/* 🔹 Feedback Section */}
+<section className="px-6 py-14 bg-gray-100 dark:bg-[#1a1a1a] text-center">
+  <h2 className="text-3xl font-bold mb-4 text-blue-600">We’d Love Your Feedback</h2>
+  <p className="text-gray-700 dark:text-gray-300 max-w-2xl mx-auto mb-6">
+    Your experience matters to us! If you have any <strong>feedback, suggestions, or complaints</strong>, feel free to reach out directly. Help us serve you better.
+  </p>
+
+  <a
+    href="https://wa.me/919106661466?text=Hello%20Navkar%20Tours%2C%20I%20would%20like%20to%20share%20some%20feedback..."
+    target="_blank"
+    rel="noopener noreferrer"
+    className="inline-block bg-green-500 hover:bg-green-600 text-white px-6 py-3 rounded-full font-medium transition shadow-lg"
+  >
+    📩 Message on WhatsApp
+  </a>
+</section>
 
       {/* 🔹 Posters & Banners Section */}
       <section className="max-w-6xl mx-auto mt-14">

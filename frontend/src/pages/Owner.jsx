@@ -60,7 +60,20 @@ function Owner() {
           </a>
       </motion.div>
            <h3 className=" mx-auto flex  justify-center  md:flex-row items-center gap-2 text-lg text-pink-700">Instagram Account of Owner</h3>
- 
+ {/* 🔹 Contact via Email Section */}
+<section className="px-6 py-10 bg-gray-100 dark:bg-[#1a1a1a] text-center">
+  <h2 className="text-2xl font-bold text-blue-600 mb-3">Contact the Owner</h2>
+  <p className="text-gray-700 dark:text-gray-300 mb-5">
+    Have any suggestions, collaborations, or important queries? Feel free to email directly to Ketanbhai.
+  </p>
+  <a
+    href="mailto:sanghvik49@gmail.com?subject=Inquiry%20about%20Navkar%20Tours%20&body=Hello%20Ketanbhai%2C"
+    className="inline-block bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded-full font-semibold transition shadow-lg"
+  >
+    📧 Mail Now
+  </a>
+</section>
+
 
         
       {/* 🔹 Achievements Section */}

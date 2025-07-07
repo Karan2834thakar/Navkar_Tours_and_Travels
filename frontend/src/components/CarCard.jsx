@@ -25,6 +25,14 @@ function CarCard({ car }) {
         >
           Call Now
         </a>
+         <a
+          href={`https://wa.me/${car.phone.replace('+', '')}`}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="bg-green-500 hover:bg-green-600 ml-2 text-white px-4 py-2 rounded-full text-sm font-medium transition"
+        >
+          Message Now
+        </a>
       </div>
     </motion.div>
   );
