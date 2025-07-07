@@ -58,8 +58,8 @@ function Owner() {
           </span>
          
           </a>
-           <h3 className="  text-lg text-pink-700">Instagram</h3>
       </motion.div>
+           <h3 className=" mx-auto flex  justify-center  md:flex-row items-center gap-2 text-lg text-pink-700">Instagram Account of Owner</h3>
  
 
         

@@ -4,6 +4,7 @@ import poster2 from '../assets/poster2.jpg';
 import poster3 from '../assets/poster3.jpg';
 import poster4 from '../assets/poster4.jpg';
 import banner1 from '../assets/banner1.jpg';
+import { FaInstagramSquare } from "react-icons/fa";
 
 function About() {
   return (
@@ -28,6 +29,19 @@ function About() {
           Over the years, we’ve proudly served thousands of happy customers across Gujarat and surrounding states.
         </p>
       </motion.div>
+      <motion.div
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        className="max-w-12 mx-auto flex  justify-center  md:flex-row items-center mt-4 gap-2"
+      >
+        <a className='bg-black text-7xl justify-center' href="https://www.instagram.com/navkar_tours_travels1?igsh=a2swN25ibmx6OGtt">
+        <span>
+          <FaInstagramSquare />
+          </span>
+        </a>
+      </motion.div>
+        <h3 className="  mx-auto flex   md:flex-row items-center mt-4 gap-2 text-pink-700 justify-center text-2xl ">Official Instagram account of Navkar</h3>
 
       {/* 🔹 Posters & Banners Section */}
       <section className="max-w-6xl mx-auto mt-14">

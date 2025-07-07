@@ -70,7 +70,14 @@ export const cars = [
   {
     id: 9,
     name: "Tempo Traveller",
-    capacity: 14,
+    capacity: 12,
+    image: traveller,
+    phone: "+919106661466",
+  },
+   {
+    id: 9,
+    name: "Tempo Traveller",
+    capacity: 17,
     image: traveller,
     phone: "+919106661466",
   },
