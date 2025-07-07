@@ -35,7 +35,7 @@ function About() {
         transition={{ duration: 0.6 }}
         className="max-w-12 mx-auto flex  justify-center  md:flex-row items-center mt-4 gap-2"
       >
-        <a className='bg-black text-7xl justify-center' href="https://www.instagram.com/navkar_tours_travels1?igsh=a2swN25ibmx6OGtt">
+        <a className=' text-7xl justify-center' href="https://www.instagram.com/navkar_tours_travels1?igsh=a2swN25ibmx6OGtt">
         <span>
           <FaInstagramSquare />
           </span>

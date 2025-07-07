@@ -160,7 +160,7 @@ function Home() {
 
       {/* 🔹 CTA */}
       <RevealSection direction="right">
-        <section className="px-6 py-14 bg-gray-100 dark:bg-[#1c1c1e] text-white text-center">
+        <section className="px-6 py-14 bg-gray-100 dark:bg-[#1c1c1e] text-gray-700 text-center">
           <h2 className="text-3xl font-bold mb-4">Ready to Book Your Next Ride?</h2>
           <p className="mb-6 text-lg">Safe, Affordable, and Trusted Travel. Choose Navkar Today!</p>
           <Link
@@ -174,7 +174,7 @@ function Home() {
 
       {/* 🔹 Policies */}
       <RevealSection direction="left">
-        <section className="bg-gray-100 dark:bg-[#000000] px-6 py-14">
+        <section className="bg-gray-300 dark:bg-[#000000] px-6 py-14">
           <div className="max-w-5xl mx-auto">
             <h2 className="text-3xl font-bold text-center mb-6 text-blue-600">Our Policies</h2>
             <ul className="space-y-5 text-gray-700 dark:text-gray-300">

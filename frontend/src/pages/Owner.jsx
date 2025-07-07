@@ -51,7 +51,7 @@ function Owner() {
         className="max-w-12 mx-auto flex  justify-center  md:flex-row items-center gap-2"
       >
         
-          <a className=" bg-black text-6xl justify-center  " href="https://www.instagram.com/rajkot_jeev?igsh=MWNram53MW5yODBqaw==">
+          <a className="  text-6xl justify-center  " href="https://www.instagram.com/rajkot_jeev?igsh=MWNram53MW5yODBqaw==">
           <span>
 
           <FaInstagramSquare />

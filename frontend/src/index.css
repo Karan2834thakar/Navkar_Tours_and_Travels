@@ -1,6 +1,10 @@
 @import "tailwindcss";
 @plugin "daisyui";
 
+module.exports  {
+  darkMode: 'class', // Not 'media'
+  // ...
+}
 html {
   scroll-behavior: smooth;
 }
