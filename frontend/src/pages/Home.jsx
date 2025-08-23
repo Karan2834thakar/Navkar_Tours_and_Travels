@@ -44,7 +44,7 @@ const RevealSection = ({ children, direction = 'left' }) => {
 
 function Home() {
   return (
-    <div className="pt-20 bg-white dark:bg-[#111] text-gray-800 dark:text-white">
+    <div className="pt-20 w-full overflow-hidden bg-white dark:bg-[#111] text-gray-800 dark:text-white">
       <Helmet>
         <title>Navkar Tours & Travels | Home</title>
         <meta name="description" content="Clean and affordable car rental in Gujarat. Trusted by thousands. Book now!" />
@@ -55,7 +55,7 @@ function Home() {
         <img
           src={heroImage}
           alt="Hero"
-          className="absolute w-full h-full object-fill sm:object-center opacity-25"
+          className="absolute w-full h-full object-fill overflow-hidden sm:object-center opacity-25"
         />
         <motion.div
           initial={{ opacity: 0, y: 30 }}
