@@ -110,7 +110,7 @@ function Home() {
       </section>
 
 
-      {/* 🔹 Trust Badges */}
+      {/* 🔹 Trust Badges added */}
       <div className="relative z-20 -mt-12 container mx-auto px-6">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
           {[
