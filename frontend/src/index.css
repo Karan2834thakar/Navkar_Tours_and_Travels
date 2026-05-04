@@ -51,8 +51,9 @@ h1, h2, h3, h4, h5, h6 {
 
 @layer base {
   body {
-    @apply antialiased text-zinc-800 bg-white selection:bg-primary-gold selection:text-white overflow-x-hidden;
+    @apply antialiased text-zinc-800 bg-white selection:bg-[#C5A059] selection:text-white overflow-x-hidden;
   }
+
 }
 
 
