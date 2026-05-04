@@ -1,10 +1,75 @@
 @import "tailwindcss";
 @plugin "daisyui";
 
-module.exports  {
-  darkMode: 'class', // Not 'media'
-  // ...
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700;800&display=swap');
+
+:root {
+  --primary-gold: #C5A059;
+  --gold-hover: #B48F48;
+  --cream-light: #FDFBF7;
+  --cream-base: #F5F1E9;
+  --cream-dark: #EBE3D5;
+  --deep-charcoal: #2D2A26;
 }
+
 html {
   scroll-behavior: smooth;
+  font-family: 'Outfit', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Playfair Display', serif;
+  @apply tracking-tight font-black;
+  color: var(--deep-charcoal);
+}
+
+.text-shadow-premium {
+  text-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.glass-card {
+  @apply bg-white/60 backdrop-blur-xl border border-white/40 shadow-xl;
+}
+
+.gold-glow {
+  box-shadow: 0 0 25px rgba(197, 160, 89, 0.2);
+}
+
+.section-padding {
+  @apply py-16 md:py-32;
+}
+
+.section-title {
+  @apply text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-black text-center mb-10 md:mb-16;
+  color: var(--deep-charcoal);
+  line-height: 1.1;
+}
+
+.premium-gradient-text {
+  @apply bg-gradient-to-r from-zinc-900 to-zinc-600 bg-clip-text text-transparent;
+}
+
+@layer base {
+  body {
+    @apply antialiased text-zinc-800 bg-white selection:bg-primary-gold selection:text-white overflow-x-hidden;
+  }
+}
+
+
+@keyframes ken-burns {
+  0% { transform: scale(1); }
+  100% { transform: scale(1.1); }
+}
+
+.animate-ken-burns {
+  animation: ken-burns 20s ease-out infinite alternate;
+}
+
+@keyframes slide-down {
+  from { transform: translateY(-20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.animate-slide-down {
+  animation: slide-down 0.4s ease-out forwards;
 }

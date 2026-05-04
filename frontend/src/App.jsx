@@ -14,7 +14,7 @@ import Footer from './components/Footer';
 function App() {
   return (
     <Router>
-      <div className="bg-white text-gray-900 dark:bg-[#111] dark:text-white min-h-screen transition-colors duration-300">
+      <div className="bg-white text-[#2D2A26] min-h-screen">
         <Navbar />
 
         {/* Main Page Routes */}
@@ -31,5 +31,6 @@ function App() {
     </Router>
   );
 }
+
 
 export default App;

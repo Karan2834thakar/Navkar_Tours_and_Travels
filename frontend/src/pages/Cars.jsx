@@ -1,5 +1,4 @@
 import { motion } from 'framer-motion';
-// import { cars } from '../data/cars';
 import CarCard from '../components/CarCard';
 import crysta from '../assets/tyuuhab_1655937.avif';
 import ertiga from '../assets/suzuki-ertiga-hybrid-color-799385.avif';
@@ -75,21 +74,21 @@ export const cars = [
     phone: "+919106661466",
   },
    {
-    id: 9,
+    id: 10,
     name: "Tempo Traveller",
     capacity: 17,
     image: traveller,
     phone: "+919106661466",
   },
   {
-    id: 10,
+    id: 11,
     name: "Tempo Traveller",
     capacity: 26,
     image: traveller,
     phone: "+919106661466",
   },
   {
-    id: 11,
+    id: 12,
     name: "Tempo Traveller",
     capacity: 29,
     image: traveller,
@@ -100,33 +99,41 @@ export const cars = [
 
 function Cars() {
   return (
-    <div className="pt-24 px-6 md:px-10 bg-white dark:bg-[#111] min-h-screen">
-      <motion.h1
-        initial={{ opacity: 0, y: -40 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
-        className="text-6xl md:text-6xl  mb-8 text-center text-blue-600"
-      >
-        Explore Our Car Collection
-      </motion.h1>
-      <motion.h4
-        initial={{ opacity: 0, y: -40 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
-        className="text-2xl md:text-2xl  mb-8 text-center text-blue-600"
-      >
-        <p className=" max-w-2xl mx-auto text-gray-700 dark:text-gray-300 mb-10">
-  Find the perfect car for your journey. Whether you're planning a family trip, a religious tour, or a business ride — we’ve got the right vehicle for every need. Browse our collection and <span className="font-semibold text-blue-600">book your car now</span> with just one call!
-</p>
-      </motion.h4>
+    <div className="pt-24 sm:pt-32 pb-20 bg-[#FDFBF7] min-h-screen">
+      <div className="section-padding container mx-auto px-6">
+        <div className="text-center mb-12 md:mb-16">
+          <motion.h1
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="text-4xl sm:text-5xl md:text-7xl font-black text-[#2D2A26] mb-4"
+          >
+            Explore Our <span className="text-[#C5A059]">Collection</span>
+          </motion.h1>
+          <div className="h-1.5 w-24 bg-[#C5A059] mx-auto rounded-full" />
+        </div>
 
-      <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 max-w-7xl mx-auto pb-10">
-        {cars.map((car) => (
-          <CarCard key={car.id} car={car} />
-        ))}
+
+        <div className="grid gap-6 sm:gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+          {cars.map((car, index) => (
+            <motion.div
+              key={car.id}
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+            >
+              <CarCard car={car} />
+            </motion.div>
+          ))}
+        </div>
       </div>
     </div>
   );
 }
 
+
+
+
+
 export default Cars;
+
