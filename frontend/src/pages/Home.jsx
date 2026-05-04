@@ -127,8 +127,8 @@ function Home() {
         </div>
       </div>
 
-
-      {/* 🔹 Popular Cars Section */}
+ 
+      {/* 🔹 Popular Cars Section ii  */}
       <section className="section-padding container mx-auto px-6 bg-[#FDFBF7]">
 
         <RevealSection>
