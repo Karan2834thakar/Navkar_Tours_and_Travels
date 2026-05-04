@@ -52,7 +52,7 @@ function Owner() {
 
             <div className="flex flex-col sm:flex-row flex-wrap justify-center lg:justify-start gap-4 pt-4">
               <a 
-                href="https://www.instagram.com/rajkot_jeev?igsh=MWNram53MW5yODBqaw=="
+                href="https://www.instagram.com/navkar_tours_travels1?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
                 className="flex items-center justify-center gap-3 px-8 py-4 bg-[#2D2A26] text-white rounded-full font-black hover:scale-105 transition-all shadow-xl"
               >
                 <Instagram className="text-[#C5A059]" />

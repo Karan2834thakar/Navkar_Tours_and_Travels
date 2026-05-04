@@ -43,7 +43,7 @@ function About() {
         <div className="text-center mb-20 md:mb-24">
           <motion.a 
             whileHover={{ scale: 1.05 }}
-            href="https://www.instagram.com/navkar_tours_travels1?igsh=a2swN25ibmx6OGtt"
+            href="https://www.instagram.com/navkar_tours_travels1?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
             className="inline-flex flex-col items-center group"
           >
             <div className="w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-tr from-[#C5A059] to-[#EBE3D5] rounded-3xl flex items-center justify-center text-white shadow-2xl mb-4 group-hover:rotate-6 transition-transform">
