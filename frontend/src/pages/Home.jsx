@@ -1,341 +1,153 @@
-import { motion, useAnimation } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
-import { useInView } from 'react-intersection-observer';
-import { useEffect } from 'react';
-import { Car, Shield, Clock, Star, MapPin, Phone, ArrowRight, CheckCircle2 } from 'lucide-react';
+import {
+  ArrowRight, Car, CheckCircle2, Clock3, MapPin, Phone,
+  ShieldCheck, Sparkles, Star,
+} from 'lucide-react';
 
-import heroImage from '../assets/hero.jpg';
-import car1 from '../assets/tyuuhab_1655937.avif';
-import car2 from '../assets/XL6-Front-3_4th..webp';
-import car3 from '../assets/baleno.png';
+import crysta from '../assets/tyuuhab_1655937.avif';
+import xl6 from '../assets/XL6-Front-3_4th..webp';
+import baleno from '../assets/baleno.png';
 
-const RevealSection = ({ children, direction = 'up' }) => {
-  const controls = useAnimation();
-  const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.1 });
-
-  useEffect(() => {
-    if (inView) {
-      controls.start('visible');
-    }
-  }, [inView, controls]);
-
-  const variants = {
-    hidden: {
-      opacity: 0,
-      y: direction === 'up' ? 40 : direction === 'down' ? -40 : 0,
-      x: direction === 'left' ? -40 : direction === 'right' ? 40 : 0,
-    },
-    visible: {
-      opacity: 1,
-      y: 0,
-      x: 0,
-      transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1] },
-    },
-  };
-
-  return (
-    <motion.div ref={ref} initial="hidden" animate={controls} variants={variants}>
-      {children}
-    </motion.div>
-  );
+const reveal = {
+  initial: { opacity: 0, y: 24 },
+  whileInView: { opacity: 1, y: 0 },
+  viewport: { once: true, amount: 0.15 },
+  transition: { duration: 0.55 },
 };
 
+const features = [
+  { icon: ShieldCheck, title: 'Verified drivers', copy: 'Experienced, courteous and background-checked.' },
+  { icon: Clock3, title: 'Always on time', copy: 'Reliable pickups for local and outstation journeys.' },
+  { icon: Sparkles, title: 'Clean vehicles', copy: 'Well-maintained cars prepared before every trip.' },
+  { icon: Phone, title: '24/7 assistance', copy: 'Real support whenever your journey needs it.' },
+];
+
+const cars = [
+  { image: crysta, name: 'Innova Crysta', seats: '7 seats', type: 'Family & premium trips' },
+  { image: xl6, name: 'Nexa XL6', seats: '6–7 seats', type: 'Comfortable long drives' },
+  { image: baleno, name: 'Maruti Baleno', seats: '5 seats', type: 'City travel' },
+];
 
 function Home() {
   return (
-    <div className="w-full overflow-hidden bg-white text-[#2D2A26]">
+    <main className="overflow-hidden bg-[#f7f8fa] text-[#172033]">
       <Helmet>
-        <title>Navkar Tours & Travels | Premium Car Rental in Gujarat</title>
-        <meta name="description" content="Clean and affordable car rental in Gujarat. Trusted by thousands. Book now!" />
+        <title>Navkar Tours & Travels | Reliable Car Rental in Gujarat</title>
+        <meta name="description" content="Safe, clean and reliable car rentals across Gujarat. Book your local or outstation ride with Navkar Tours & Travels." />
       </Helmet>
 
-      {/* 🔹 Premium Hero Section */}
-      <section className="relative h-screen flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0 z-0">
-          <img
-            src={heroImage}
-            alt="Premium Travel"
-            className="w-full h-full object-cover opacity-50 scale-105 animate-ken-burns"
-          />
-          <div className="absolute inset-0 bg-gradient-to-b from-[#2D2A26]/80 via-[#2D2A26]/40 to-[#FDFBF7]" />
-        </div>
-        
-        <div className="container relative z-10 mx-auto px-6 text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, ease: "easeOut" }}
-            className="max-w-5xl mx-auto"
-          >
-            <span className="inline-block px-4 py-1.5 mb-6 text-[10px] sm:text-xs font-bold tracking-[0.2em] text-white uppercase bg-[#C5A059] rounded-full shadow-[0_0_20px_rgba(197,160,89,0.5)]">
-              #1 Trusted Travel Partner
-            </span>
-            <h1 className="text-4xl sm:text-6xl md:text-8xl font-black mb-6 text-white drop-shadow-2xl leading-[1.1] tracking-tighter">
-              Travel with <br />
-              <span className="text-[#C5A059]">Trust & Comfort</span>
+      <section className="hero-shell relative min-h-[760px] overflow-hidden bg-[#0b1f3a] pt-32 text-white lg:min-h-[820px] lg:pt-40">
+        <div className="hero-grid absolute inset-0 opacity-30" />
+        <div className="absolute -right-32 top-20 h-[480px] w-[480px] rounded-full bg-[#f59e0b]/20 blur-3xl" />
+        <div className="page-container relative grid items-center gap-14 pb-28 lg:grid-cols-[1.05fr_.95fr] lg:gap-8">
+          <motion.div initial={{ opacity: 0, y: 28 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }}>
+            <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-4 py-2 text-xs font-bold uppercase tracking-[.18em] text-[#fbbf24] backdrop-blur">
+              <Star className="h-4 w-4" fill="currentColor" /> Rajkot's trusted travel partner
+            </div>
+            <h1 className="hero-title max-w-3xl text-5xl font-extrabold leading-[1.04] text-white sm:text-6xl lg:text-7xl xl:text-[5.25rem]">
+              Every journey,<br /><span className="text-[#fbbf24]">comfortably yours.</span>
             </h1>
-            <p className="text-white/90 text-lg sm:text-xl md:text-2xl mb-10 max-w-2xl mx-auto font-medium drop-shadow-lg leading-relaxed px-4">
-              Premium car rentals and personalized service from Navkar Tours. Your journey, our priority.
+            <p className="mt-7 max-w-xl text-lg leading-8 text-slate-200 sm:text-xl">
+              Clean cars, professional drivers and dependable service for local, airport and outstation travel across Gujarat.
             </p>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 px-6 sm:px-0">
-              <Link
-                to="/cars"
-                className="w-full sm:w-auto group relative px-8 sm:px-10 py-4 sm:py-5 bg-[#C5A059] hover:bg-[#B48F48] text-white font-black text-base sm:text-lg rounded-full transition-all duration-300 transform hover:scale-105 hover:shadow-[0_0_40px_rgba(197,160,89,0.6)] flex items-center justify-center gap-2"
-              >
-                Book Your Ride
-                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+            <div className="mt-9 flex flex-col gap-3 sm:flex-row">
+              <Link to="/cars" className="btn-primary group">
+                Explore our fleet <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
               </Link>
-              <a
-                href="tel:+919898711155"
-                className="w-full sm:w-auto px-8 sm:px-10 py-4 sm:py-5 bg-white/10 hover:bg-white/20 backdrop-blur-md text-white border border-white/40 font-black text-base sm:text-lg rounded-full transition-all text-center"
-              >
-                Call for Inquiry
+              <a href="tel:+919898711155" className="btn-secondary">
+                <Phone className="h-5 w-5 text-[#fbbf24]" /> +91 98987 11155
               </a>
+            </div>
+            <div className="mt-10 flex flex-wrap gap-x-7 gap-y-3 text-sm font-semibold text-slate-200">
+              {['Transparent pricing', '24/7 support', 'Across Gujarat'].map((item) => (
+                <span key={item} className="flex items-center gap-2"><CheckCircle2 className="h-4 w-4 text-[#fbbf24]" />{item}</span>
+              ))}
+            </div>
+          </motion.div>
+
+          <motion.div initial={{ opacity: 0, x: 40 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8, delay: 0.15 }} className="relative mx-auto w-full max-w-[650px] lg:mt-10">
+            <div className="absolute inset-x-10 bottom-2 h-24 rounded-full bg-black/40 blur-3xl" />
+            <div className="relative rounded-[2.5rem] border border-white/15 bg-white/10 p-5 shadow-2xl backdrop-blur-sm sm:p-8">
+              <div className="overflow-hidden rounded-[1.8rem] bg-gradient-to-br from-white to-slate-200">
+                <img src={crysta} alt="Innova Crysta available from Navkar Tours" className="h-[300px] w-full object-cover sm:h-[390px]" />
+              </div>
+              <div className="absolute -bottom-6 left-8 right-8 flex items-center justify-between rounded-2xl bg-white p-4 text-[#172033] shadow-2xl sm:left-14 sm:right-14 sm:p-5">
+                <div><p className="text-xs font-bold uppercase tracking-[.16em] text-[#d97706]">Travel made easy</p><p className="mt-1 font-extrabold">Local • Airport • Outstation</p></div>
+                <div className="hidden h-11 w-11 items-center justify-center rounded-xl bg-[#fff7e6] sm:flex"><Car className="text-[#d97706]" /></div>
+              </div>
             </div>
           </motion.div>
         </div>
+      </section>
 
+      <section className="relative z-10 -mt-12 pb-20">
+        <div className="page-container grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          {features.map(({ icon: Icon, title, copy }) => (
+            <div key={title} className="rounded-2xl border border-slate-200 bg-white p-6 shadow-[0_16px_45px_rgba(15,23,42,.08)]">
+              <div className="mb-4 flex h-11 w-11 items-center justify-center rounded-xl bg-[#fff7e6] text-[#d97706]"><Icon className="h-5 w-5" /></div>
+              <h3 className="text-lg font-extrabold text-[#172033]">{title}</h3><p className="mt-2 text-sm leading-6 text-slate-600">{copy}</p>
+            </div>
+          ))}
+        </div>
+      </section>
 
-        {/* Scroll Indicator */}
-        <motion.div 
-          animate={{ y: [0, 10, 0] }}
-          transition={{ duration: 2, repeat: Infinity }}
-          className="absolute bottom-10 left-1/2 -translate-x-1/2 text-white/50"
-        >
-          <div className="w-6 h-10 border-2 border-white/40 rounded-full flex justify-center p-1">
-            <div className="w-1.5 h-1.5 bg-[#C5A059] rounded-full" />
+      <section className="section-space bg-white">
+        <motion.div {...reveal} className="page-container">
+          <div className="section-heading"><span>Our fleet</span><h2>Choose the right car for your journey</h2><p>From comfortable city rides to spacious family travel, every vehicle is kept clean and road-ready.</p></div>
+          <div className="mt-12 grid gap-6 md:grid-cols-3">
+            {cars.map((car) => (
+              <article key={car.name} className="fleet-card group">
+                <div className="h-60 overflow-hidden bg-slate-100"><img src={car.image} alt={car.name} className="h-full w-full object-cover transition duration-700 group-hover:scale-105" /></div>
+                <div className="p-6"><div className="flex items-start justify-between gap-3"><div><h3 className="text-2xl font-extrabold text-[#172033]">{car.name}</h3><p className="mt-1 text-sm text-slate-600">{car.type}</p></div><span className="rounded-full bg-[#fff7e6] px-3 py-1 text-xs font-bold text-[#b45309]">{car.seats}</span></div>
+                  <Link to="/cars" className="mt-6 inline-flex items-center gap-2 font-bold text-[#b45309] hover:text-[#92400e]">View vehicle <ArrowRight className="h-4 w-4" /></Link>
+                </div>
+              </article>
+            ))}
+          </div>
+          <div className="mt-10 text-center"><Link to="/cars" className="btn-dark">View all vehicles <ArrowRight className="h-5 w-5" /></Link></div>
+        </motion.div>
+      </section>
+
+      <section className="section-space bg-[#f1f5f9]">
+        <motion.div {...reveal} className="page-container grid gap-12 lg:grid-cols-[.85fr_1.15fr] lg:items-center">
+          <div><div className="section-heading text-left"><span>Simple booking</span><h2>Your ride in three easy steps</h2><p className="mx-0">No complicated forms. Choose a car, speak with us and travel with confidence.</p></div><a href="tel:+919898711155" className="btn-primary mt-8">Call to book <Phone className="h-5 w-5" /></a></div>
+          <div className="space-y-4">
+            {[['01', 'Pick your vehicle', 'Browse our fleet based on your group size and travel needs.'], ['02', 'Call and confirm', 'Share your route and schedule to receive clear booking details.'], ['03', 'Travel comfortably', 'Your driver arrives on time, ready for a safe journey.']].map(([n, title, text]) => (
+              <div key={n} className="flex gap-5 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm"><span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-[#0b1f3a] font-extrabold text-[#fbbf24]">{n}</span><div><h3 className="text-xl font-extrabold text-[#172033]">{title}</h3><p className="mt-1 leading-7 text-slate-600">{text}</p></div></div>
+            ))}
           </div>
         </motion.div>
       </section>
 
-
-      {/* 🔹 Trust Badges added */}
-      <div className="relative z-20 -mt-12 container mx-auto px-6">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-          {[
-            { icon: Shield, label: "Secure Travel" },
-            { icon: Clock, label: "24/7 Support" },
-            { icon: Star, label: "Top Rated" },
-            { icon: Car, label: "Clean Fleet" }
-          ].map((badge, i) => (
-            <div key={i} className="glass-card p-6 rounded-2xl text-center flex flex-col items-center gap-3">
-              <badge.icon className="w-8 h-8 text-[#C5A059]" />
-              <span className="font-bold text-sm uppercase tracking-wider">{badge.label}</span>
-            </div>
-          ))}
-        </div>
-      </div>
-
- 
-      {/* 🔹 Popular Cars Section ii  */}
-      <section className="section-padding container mx-auto px-6 bg-[#FDFBF7]">
-
-        <RevealSection>
-          <div className="text-center mb-12 md:mb-16">
-            <h2 className="section-title">Our Popular <span className="text-[#C5A059]">Fleet</span></h2>
-            <div className="h-1.5 w-24 bg-[#C5A059] mx-auto rounded-full -mt-8 md:-mt-12" />
+      <section className="section-space bg-white">
+        <motion.div {...reveal} className="page-container">
+          <div className="section-heading"><span>Service area</span><h2>Across Gujarat, wherever you need us</h2><p>Local and outstation service from Rajkot to major destinations throughout the state.</p></div>
+          <div className="mt-10 flex flex-wrap justify-center gap-3">
+            {['Rajkot', 'Ahmedabad', 'Dwarka', 'Somnath', 'Jamnagar', 'Junagadh', 'Porbandar', 'Surat', 'Vadodara', 'Bhavnagar'].map(city => <span key={city} className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-[#f8fafc] px-5 py-3 font-bold text-slate-700"><MapPin className="h-4 w-4 text-[#d97706]" />{city}</span>)}
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-            {[car1, car2, car3].map((img, i) => (
-              <motion.div
-                whileHover={{ y: -10 }}
-                key={i}
-                className="group relative rounded-[2rem] overflow-hidden shadow-xl bg-white border border-[#EBE3D5]"
-              >
-                <img
-                  src={img}
-                  alt={`Car ${i + 1}`}
-                  className="w-full h-56 sm:h-64 object-cover transition-transform duration-500 group-hover:scale-110"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#2D2A26]/90 via-[#2D2A26]/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6 sm:p-8">
-                  <Link to="/cars" className="w-full py-3 sm:py-4 bg-[#C5A059] text-white font-black rounded-2xl text-center shadow-xl">
-                    View Details
-                  </Link>
-                </div>
-              </motion.div>
-            ))}
+        </motion.div>
+      </section>
+
+      <section className="section-space bg-[#0b1f3a] text-white">
+        <motion.div {...reveal} className="page-container">
+          <div className="section-heading dark"><span>Why customers return</span><h2>Service that earns trust</h2></div>
+          <div className="mt-12 grid gap-6 lg:grid-cols-3">
+            {[
+              ['“Very professional drivers and clean vehicles. Our Dwarka trip was safe and comfortable.”', 'Neha Joshi'],
+              ['“Timely pickup, friendly behaviour and a comfortable Innova for our family.”', 'Hiren Patel'],
+              ['“Affordable pricing and excellent car condition. We will definitely book again.”', 'Amisha Shah'],
+            ].map(([quote, name]) => <blockquote key={name} className="rounded-2xl border border-white/10 bg-white/[.07] p-7"><div className="mb-5 flex gap-1 text-[#fbbf24]">{[1,2,3,4,5].map(s => <Star key={s} className="h-4 w-4" fill="currentColor" />)}</div><p className="text-lg leading-8 text-slate-100">{quote}</p><footer className="mt-5 font-bold text-[#fbbf24]">— {name}</footer></blockquote>)}
           </div>
-        </RevealSection>
+        </motion.div>
       </section>
 
-      {/* 🔹 Testimonials */}
-      <section className="py-20 md:py-32 bg-[#F5F1E9]">
-        <div className="container mx-auto px-6 text-center">
-          <RevealSection direction="up">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-black mb-12 md:mb-20">What Our <span className="text-[#C5A059]">Customers Say</span></h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-              {[
-                ["Very professional drivers and clean vehicles. Our trip to Dwarka was safe and comfortable!", "– Neha Joshi"],
-                ["Great service! I booked an Innova for my family. Timely pickup and friendly behavior.", "– Hiren Patel"],
-                ["Affordable pricing and excellent car condition. Will definitely choose again.", "– Amisha Shah"]
-              ].map(([quote, name], index) => (
-                <div key={index} className="glass-card p-8 md:p-10 rounded-[2.5rem] relative text-left group hover:bg-[#C5A059] transition-colors duration-500 border border-white/40">
-                  <Star className="w-8 h-8 text-[#C5A059] group-hover:text-[#2D2A26] mb-6 transition-colors" fill="currentColor" />
-                  <p className="text-base md:text-lg italic mb-6 group-hover:text-[#2D2A26] transition-colors leading-relaxed">"{quote}"</p>
-                  <span className="block font-black text-[#C5A059] group-hover:text-[#2D2A26] uppercase tracking-[0.2em] text-xs transition-colors">{name}</span>
-                  <div className="absolute top-6 right-10 text-6xl font-serif text-[#C5A059]/10 group-hover:text-[#2D2A26]/5 transition-colors">"</div>
-                </div>
-              ))}
-            </div>
-          </RevealSection>
-        </div>
+      <section className="bg-[#fbbf24] py-14">
+        <div className="page-container flex flex-col items-center justify-between gap-7 text-center lg:flex-row lg:text-left"><div><p className="text-sm font-extrabold uppercase tracking-[.18em] text-[#78350f]">Ready when you are</p><h2 className="mt-2 text-3xl font-extrabold text-[#0b1f3a] sm:text-4xl">Let’s plan your next ride.</h2></div><div className="flex flex-col gap-3 sm:flex-row"><Link to="/cars" className="btn-dark">Browse fleet <Car className="h-5 w-5" /></Link><a href="tel:+919898711155" className="inline-flex items-center justify-center gap-2 rounded-xl border-2 border-[#0b1f3a] px-6 py-3.5 font-extrabold text-[#0b1f3a] transition hover:bg-[#0b1f3a] hover:text-white"><Phone className="h-5 w-5" />Call now</a></div></div>
       </section>
-
-          {/* 🔹 Service Areas */}
-      <section className="py-20 md:py-32 bg-white relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-96 h-96 bg-[#C5A059]/5 rounded-full blur-3xl" />
-        <div className="container mx-auto px-6 relative z-10">
-          <RevealSection>
-            <div className="text-center mb-12 md:mb-16">
-              <h2 className="text-3xl sm:text-4xl md:text-5xl font-black mb-4 text-[#2D2A26]">We Operate <span className="text-[#C5A059]">Across Gujarat</span></h2>
-              <p className="text-[#7D756D] max-w-xl mx-auto text-sm sm:text-base">Providing reliable transportation services in all major cities and beyond.</p>
-            </div>
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3 md:gap-4">
-              {["Rajkot", "Jamnagar", "Dwarka", "Junagadh", "Somnath", "Ahmedabad", "Porbandar", "Bhavnagar", "Surat", "Vadodara", "Gandhinagar", "And More"].map((city, i) => (
-                <div key={i} className="p-4 border border-[#EBE3D5] rounded-2xl hover:border-[#C5A059] hover:bg-[#F5F1E9] transition-all text-center group">
-                  <MapPin className="w-4 h-4 sm:w-5 sm:h-5 text-[#C5A059] mx-auto mb-2 group-hover:scale-125 transition-transform" />
-                  <span className="font-bold text-xs sm:text-sm">{city}</span>
-                </div>
-              ))}
-            </div>
-          </RevealSection>
-        </div>
-      </section>
-
-      {/* 🔹 How It Works */}
-      <section className="py-20 md:py-32 bg-[#2D2A26] text-white relative">
-        <div className="container mx-auto px-6">
-          <RevealSection direction="up">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-center mb-12 md:mb-20 italic text-white">How to <span className="text-[#C5A059] underline decoration-wavy">Book</span></h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 relative">
-              <div className="hidden md:block absolute top-1/2 left-0 w-full h-0.5 bg-[#C5A059]/10 -translate-y-1/2" />
-              {[
-                { title: "Browse Cars", desc: "Check available cars by seating capacity and features.", step: "01" },
-                { title: "Call to Book", desc: "Click the “Call Now” button to directly contact for booking.", step: "02" },
-                { title: "Ride On Time", desc: "Your selected car will arrive at your doorstep on time!", step: "03" }
-              ].map((item, i) => (
-                <div key={i} className="relative z-10 bg-[#3D3A36] border border-white/5 p-8 rounded-[2.5rem] text-center group hover:border-[#C5A059] transition-all">
-                  <div className="w-14 h-14 sm:w-16 sm:h-16 bg-[#C5A059] text-white font-black text-xl sm:text-2xl flex items-center justify-center rounded-2xl mx-auto mb-6 group-hover:rotate-12 transition-transform">
-                    {item.step}
-                  </div>
-                  <h3 className="text-xl sm:text-2xl font-bold mb-4">{item.title}</h3>
-                  <p className="text-zinc-400 text-sm sm:text-base">{item.desc}</p>
-                </div>
-              ))}
-            </div>
-          </RevealSection>
-        </div>
-      </section>
-
-      {/* 🔹 Visit Us & CTA */}
-      <section className="py-20 md:py-32 bg-[#FDFBF7]">
-        <div className="container mx-auto px-6">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-16 items-center">
-            <RevealSection direction="left">
-              <div className="glass-card p-8 sm:p-12 rounded-[3rem] relative overflow-hidden bg-white/80 border border-[#EBE3D5]">
-                <div className="absolute top-0 right-0 w-32 h-32 bg-[#C5A059] rounded-bl-full opacity-10" />
-                <h2 className="text-2xl sm:text-3xl font-black mb-8 flex items-center gap-3">
-                  <MapPin className="text-[#C5A059]" />
-                  Visit Our Office
-                </h2>
-                <div className="space-y-6 text-base sm:text-lg">
-                  <p className="text-[#7D756D] font-medium tracking-wide italic">
-                    "All types of Cars Available on Rental Basis"
-                  </p>
-                  <address className="not-italic leading-relaxed text-[#2D2A26]">
-                    <strong className="text-[#C5A059] block mb-2 uppercase text-xs sm:text-sm tracking-[0.2em] font-black">Headquarters</strong>
-                    Plot No. 148, Rudanagar-1, Vrundavan Society, <br className="hidden sm:block" />
-                    St. No-7, Nr. Shakti Provision Store, <br className="hidden sm:block" />
-                    Kalawad Road, Rajkot – 360005, Gujarat
-                  </address>
-                  <div className="pt-6">
-                    <p className="uppercase text-[10px] sm:text-xs tracking-[0.2em] text-[#7D756D] mb-4 font-black">Business Hours</p>
-                    <div className="flex justify-between items-center py-2 border-b border-[#EBE3D5]">
-                      <span className="text-sm">Mon - Sun</span>
-                      <span className="font-bold text-[#C5A059] text-sm sm:text-base">6:00 AM - 11:00 PM</span>
-                    </div>
-                    <p className="mt-4 text-xs sm:text-sm text-[#7D756D] italic">For emergency travel services, call directly 24/7.</p>
-                  </div>
-                </div>
-              </div>
-            </RevealSection>
-
-            <RevealSection direction="right">
-              <div className="space-y-8 text-center lg:text-left px-4">
-                <h2 className="text-4xl sm:text-5xl md:text-6xl font-black leading-tight text-[#2D2A26]">Ready to Book <br className="hidden sm:block" />Your <span className="text-[#C5A059]">Next Ride?</span></h2>
-                <p className="text-lg sm:text-xl text-[#7D756D] leading-relaxed max-w-xl mx-auto lg:mx-0">Safe, Affordable, and Trusted Travel. Experience the difference with Navkar Today!</p>
-                <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-4">
-                  <Link
-                    to="/cars"
-                    className="w-full sm:w-auto px-10 py-4 sm:py-5 bg-[#2D2A26] text-white font-black rounded-full hover:scale-105 transition-all shadow-xl text-center"
-                  >
-                    View Our Fleet
-                  </Link>
-                  <a
-                    href="tel:+919898711155"
-                    className="w-full sm:w-auto px-10 py-4 sm:py-5 bg-[#C5A059] text-white font-black rounded-full hover:scale-105 transition-all shadow-xl flex items-center justify-center gap-2"
-                  >
-                    <Phone className="w-5 h-5" />
-                    Call Now
-                  </a>
-                </div>
-              </div>
-            </RevealSection>
-          </div>
-        </div>
-      </section>
-
-
-
-      {/* 🔹 Policies */}
-      <section className="py-24 bg-[#2D2A26] text-white">
-        <div className="container mx-auto px-6">
-          <RevealSection direction="up">
-            <div className="grid lg:grid-cols-2 gap-16 items-center">
-              <div>
-                <h2 className="text-4xl font-black mb-10 italic text-white">Our <span className="text-[#C5A059]">Commitment</span></h2>
-
-                <div className="space-y-6">
-                  {[
-                    { t: "Transparent Pricing", d: "No hidden charges. What you see is what you pay." },
-                    { t: "Driver Safety", d: "All our drivers are background-verified and trained." },
-                    { t: "Clean Vehicles", d: "Regularly sanitized cars before every trip." },
-                    { t: "Booking Flexibility", d: "Modify or cancel your trip 24 hours in advance." },
-                    { t: "24x7 Support", d: "Emergency support available for all customers." }
-                  ].map((policy, i) => (
-                    <div key={i} className="flex gap-4 group">
-                      <div className="flex-shrink-0 w-10 h-10 bg-[#C5A059]/10 rounded-lg flex items-center justify-center group-hover:bg-[#C5A059] transition-colors">
-                        <CheckCircle2 className="w-6 h-6 text-[#C5A059] group-hover:text-[#2D2A26]" />
-                      </div>
-
-                      <div>
-                        <h4 className="text-xl font-bold text-[#C5A059] mb-1">{policy.t}</h4>
-                        <p className="text-zinc-300">{policy.d}</p>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-              <div className="relative rounded-[2rem] overflow-hidden group border border-white/10">
-                <img src={car1} className="w-full h-[500px] object-cover opacity-80 group-hover:scale-110 transition-transform duration-1000" />
-                <div className="absolute inset-0 bg-[#C5A059]/10 mix-blend-overlay" />
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="text-center p-8 bg-white/10 backdrop-blur-md rounded-2xl border border-white/20">
-                    <p className="text-3xl font-black text-white mb-2">Trusted by 10k+</p>
-                    <p className="text-[#C5A059] font-bold tracking-widest uppercase text-sm">Happy Customers</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </RevealSection>
-        </div>
-      </section>
-    </div>
+    </main>
   );
 }
 
-
-
 export default Home;
-

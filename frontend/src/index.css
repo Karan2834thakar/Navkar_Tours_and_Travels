@@ -1,26 +1,26 @@
 @import "tailwindcss";
 @plugin "daisyui";
 
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap');
 
 :root {
-  --primary-gold: #C5A059;
-  --gold-hover: #B48F48;
-  --cream-light: #FDFBF7;
-  --cream-base: #F5F1E9;
-  --cream-dark: #EBE3D5;
-  --deep-charcoal: #2D2A26;
+  --primary-gold: #f59e0b;
+  --gold-hover: #d97706;
+  --cream-light: #f8fafc;
+  --cream-base: #f1f5f9;
+  --cream-dark: #e2e8f0;
+  --deep-charcoal: #172033;
+  --navy: #0b1f3a;
 }
 
 html {
   scroll-behavior: smooth;
-  font-family: 'Outfit', sans-serif;
+  font-family: 'Manrope', sans-serif;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Playfair Display', serif;
-  @apply tracking-tight font-black;
-  color: var(--deep-charcoal);
+  font-family: 'Manrope', sans-serif;
+  @apply tracking-tight;
 }
 
 .text-shadow-premium {
@@ -28,7 +28,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .glass-card {
-  @apply bg-white/60 backdrop-blur-xl border border-white/40 shadow-xl;
+  @apply bg-white border border-slate-200 shadow-xl;
 }
 
 .gold-glow {
@@ -51,9 +51,30 @@ h1, h2, h3, h4, h5, h6 {
 
 @layer base {
   body {
-    @apply antialiased text-zinc-800 bg-white selection:bg-[#C5A059] selection:text-white overflow-x-hidden;
+    @apply antialiased text-slate-800 bg-white selection:bg-[#f59e0b] selection:text-white overflow-x-hidden;
   }
 
+}
+
+@layer components {
+  .page-container { @apply mx-auto w-full max-w-7xl px-5 sm:px-6 lg:px-8; }
+  .section-space { @apply py-20 sm:py-24 lg:py-28; }
+  .btn-primary { @apply inline-flex items-center justify-center gap-2 rounded-xl bg-[#f59e0b] px-6 py-3.5 font-extrabold text-[#172033] shadow-lg shadow-amber-950/10 transition hover:bg-[#fbbf24] hover:-translate-y-0.5; }
+  .btn-secondary { @apply inline-flex items-center justify-center gap-2 rounded-xl border border-white/20 bg-white/10 px-6 py-3.5 font-bold text-white backdrop-blur transition hover:bg-white/15; }
+  .btn-dark { @apply inline-flex items-center justify-center gap-2 rounded-xl bg-[#0b1f3a] px-6 py-3.5 font-extrabold text-white shadow-lg transition hover:bg-[#132f53] hover:-translate-y-0.5; }
+  .section-heading { @apply mx-auto max-w-3xl text-center; }
+  .section-heading > span { @apply text-xs font-extrabold uppercase tracking-[.2em] text-[#b45309]; }
+  .section-heading > h2 { @apply mt-3 text-3xl font-extrabold leading-tight text-[#172033] sm:text-4xl lg:text-5xl; }
+  .section-heading > p { @apply mx-auto mt-4 max-w-2xl leading-7 text-slate-600; }
+  .section-heading.dark > span { @apply text-[#fbbf24]; }
+  .section-heading.dark > h2 { @apply text-white; }
+  .fleet-card { @apply overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-[0_14px_40px_rgba(15,23,42,.07)] transition hover:-translate-y-1 hover:shadow-xl; }
+}
+
+.hero-grid {
+  background-image: linear-gradient(rgba(255,255,255,.07) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.07) 1px, transparent 1px);
+  background-size: 54px 54px;
+  mask-image: linear-gradient(to bottom, black, transparent 85%);
 }
 
 

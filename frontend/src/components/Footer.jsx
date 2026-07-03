@@ -1,22 +1,22 @@
+import { Link } from 'react-router-dom';
+import { Phone } from 'lucide-react';
+
 function Footer() {
   return (
-    <footer className="bg-[#2D2A26] text-white py-12 border-t border-[#3D3A36]">
-      <div className="container mx-auto px-6">
-        <div className="flex flex-col md:flex-row justify-between items-center gap-6">
-          <div className="flex flex-col items-center md:items-start">
-            <span className="text-2xl font-black tracking-tighter">NAVKAR</span>
-            <span className="text-xs font-bold tracking-[0.2em] text-[#C5A059] uppercase">Tours & Travels</span>
-          </div>
-          <div className="text-zinc-400 text-sm text-center md:text-right">
-            <p>© {new Date().getFullYear()} Navkar Tours and Travels. All rights reserved.</p>
-            <p className="mt-1">Crafted for premium travel experiences in Gujarat.</p>
-          </div>
+    <footer className="border-t border-white/10 bg-[#07172c] py-12 text-white">
+      <div className="page-container flex flex-col items-center justify-between gap-8 md:flex-row">
+        <div className="text-center md:text-left">
+          <Link to="/" className="text-2xl font-extrabold tracking-tight">NAVKAR</Link>
+          <p className="mt-1 text-xs font-bold uppercase tracking-[.2em] text-[#fbbf24]">Tours & Travels</p>
         </div>
+        <nav className="flex flex-wrap justify-center gap-6 text-sm font-semibold text-slate-300">
+          <Link to="/cars" className="hover:text-white">Fleet</Link><Link to="/about" className="hover:text-white">About</Link><Link to="/owner" className="hover:text-white">Owner</Link>
+          <a href="tel:+919898711155" className="inline-flex items-center gap-2 text-[#fbbf24]"><Phone className="h-4 w-4" />98987 11155</a>
+        </nav>
+        <div className="text-center text-sm text-slate-400 md:text-right"><p>© {new Date().getFullYear()} Navkar Tours & Travels.</p><p className="mt-1">Reliable journeys across Gujarat.</p></div>
       </div>
     </footer>
   );
 }
 
-
 export default Footer;
-
