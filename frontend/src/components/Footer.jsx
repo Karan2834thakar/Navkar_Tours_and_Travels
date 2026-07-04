@@ -11,7 +11,7 @@ function Footer() {
         </div>
         <nav className="flex flex-wrap justify-center gap-6 text-sm font-semibold text-slate-300">
           <Link to="/cars" className="hover:text-white">Fleet</Link><Link to="/about" className="hover:text-white">About</Link><Link to="/owner" className="hover:text-white">Owner</Link>
-          <a href="tel:+919898711155" className="inline-flex items-center gap-2 text-[#fbbf24]"><Phone className="h-4 w-4" />98987 11155</a>
+          <a href="tel:+917778952448" className="inline-flex items-center gap-2 text-[#fbbf24]"><Phone className="h-4 w-4" />77789 52448</a>
         </nav>
         <div className="text-center text-sm text-slate-400 md:text-right"><p>© {new Date().getFullYear()} Navkar Tours & Travels.</p><p className="mt-1">Reliable journeys across Gujarat.</p></div>
       </div>

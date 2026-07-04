@@ -64,7 +64,7 @@ function About() {
               Your experience matters to us! If you have any feedback, suggestions, or complaints, feel free to reach out directly.
             </p>
             <a
-              href="https://wa.me/919106661466?text=Hello%20Navkar%20Tours%2C%20I%20would%20like%20to%20share%20some%20feedback..."
+              href="https://wa.me/917778952448?text=Hello%20Navkar%20Tours%2C%20I%20would%20like%20to%20share%20some%20feedback..."
               target="_blank"
               rel="noopener noreferrer"
               className="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-[#C5A059] text-white px-8 sm:px-10 py-4 sm:py-5 rounded-full font-black text-base sm:text-lg hover:scale-105 transition-all shadow-2xl shadow-[#C5A059]/20"
