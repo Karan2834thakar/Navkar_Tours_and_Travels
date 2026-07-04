@@ -75,7 +75,7 @@ function Navbar() {
         {/* Action Button */}
         <div className="hidden md:flex items-center gap-4">
           <a
-            href="tel:+919898711155"
+            href="tel:+917778952448"
             className={`flex items-center gap-2 px-6 py-2.5 rounded-full font-bold text-sm transition-all shadow-xl hover:scale-105 ${
               solid 
                 ? "bg-[#0b1f3a] text-white" 
@@ -83,7 +83,7 @@ function Navbar() {
             }`}
           >
             <Phone className="w-4 h-4 text-[#f59e0b]" />
-            98987 11155
+            77789 52448
           </a>
         </div>
 
@@ -117,7 +117,7 @@ function Navbar() {
               </NavLink>
             ))}
             <a
-              href="tel:+919898711155"
+              href="tel:+917778952448"
               className="mt-4 flex items-center justify-center gap-3 bg-[#0b1f3a] text-white p-5 rounded-2xl font-black text-lg shadow-xl"
             >
               <Phone className="w-6 h-6 text-[#f59e0b]" />

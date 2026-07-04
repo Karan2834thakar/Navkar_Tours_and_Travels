@@ -56,8 +56,8 @@ function Home() {
               <Link to="/cars" className="btn-primary group">
                 Explore our fleet <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
               </Link>
-              <a href="tel:+919898711155" className="btn-secondary">
-                <Phone className="h-5 w-5 text-[#fbbf24]" /> +91 98987 11155
+              <a href="tel:+917778952448" className="btn-secondary">
+                <Phone className="h-5 w-5 text-[#fbbf24]" /> +91 77789 52448
               </a>
             </div>
             <div className="mt-10 flex flex-wrap gap-x-7 gap-y-3 text-sm font-semibold text-slate-200">
@@ -112,7 +112,7 @@ function Home() {
 
       <section className="section-space bg-[#f1f5f9]">
         <motion.div {...reveal} className="page-container grid gap-12 lg:grid-cols-[.85fr_1.15fr] lg:items-center">
-          <div><div className="section-heading text-left"><span>Simple booking</span><h2>Your ride in three easy steps</h2><p className="mx-0">No complicated forms. Choose a car, speak with us and travel with confidence.</p></div><a href="tel:+919898711155" className="btn-primary mt-8">Call to book <Phone className="h-5 w-5" /></a></div>
+          <div><div className="section-heading text-left"><span>Simple booking</span><h2>Your ride in three easy steps</h2><p className="mx-0">No complicated forms. Choose a car, speak with us and travel with confidence.</p></div><a href="tel:+917778952448" className="btn-primary mt-8">Call to book <Phone className="h-5 w-5" /></a></div>
           <div className="space-y-4">
             {[['01', 'Pick your vehicle', 'Browse our fleet based on your group size and travel needs.'], ['02', 'Call and confirm', 'Share your route and schedule to receive clear booking details.'], ['03', 'Travel comfortably', 'Your driver arrives on time, ready for a safe journey.']].map(([n, title, text]) => (
               <div key={n} className="flex gap-5 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm"><span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-[#0b1f3a] font-extrabold text-[#fbbf24]">{n}</span><div><h3 className="text-xl font-extrabold text-[#172033]">{title}</h3><p className="mt-1 leading-7 text-slate-600">{text}</p></div></div>
@@ -144,7 +144,7 @@ function Home() {
       </section>
 
       <section className="bg-[#fbbf24] py-14">
-        <div className="page-container flex flex-col items-center justify-between gap-7 text-center lg:flex-row lg:text-left"><div><p className="text-sm font-extrabold uppercase tracking-[.18em] text-[#78350f]">Ready when you are</p><h2 className="mt-2 text-3xl font-extrabold text-[#0b1f3a] sm:text-4xl">Let’s plan your next ride.</h2></div><div className="flex flex-col gap-3 sm:flex-row"><Link to="/cars" className="btn-dark">Browse fleet <Car className="h-5 w-5" /></Link><a href="tel:+919898711155" className="inline-flex items-center justify-center gap-2 rounded-xl border-2 border-[#0b1f3a] px-6 py-3.5 font-extrabold text-[#0b1f3a] transition hover:bg-[#0b1f3a] hover:text-white"><Phone className="h-5 w-5" />Call now</a></div></div>
+        <div className="page-container flex flex-col items-center justify-between gap-7 text-center lg:flex-row lg:text-left"><div><p className="text-sm font-extrabold uppercase tracking-[.18em] text-[#78350f]">Ready when you are</p><h2 className="mt-2 text-3xl font-extrabold text-[#0b1f3a] sm:text-4xl">Let’s plan your next ride.</h2></div><div className="flex flex-col gap-3 sm:flex-row"><Link to="/cars" className="btn-dark">Browse fleet <Car className="h-5 w-5" /></Link><a href="tel:+917778952448" className="inline-flex items-center justify-center gap-2 rounded-xl border-2 border-[#0b1f3a] px-6 py-3.5 font-extrabold text-[#0b1f3a] transition hover:bg-[#0b1f3a] hover:text-white"><Phone className="h-5 w-5" />Call now</a></div></div>
       </section>
     </main>
   );
